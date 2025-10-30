@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boda de Yesica & Andrés</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #fff;
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  color: #4a3b24;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: transparent;
+  padding: 40px 20px 10px;
+  position: relative;
+}
+
+.titulo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 70px;
+  color: #b89b5e;
+  margin-bottom: 10px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.nombres {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 55px;
+  color: #c6a95f;
+  margin-top: 10px;
+}
+
+.nombres img {
+  width: 120px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.texto {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #5a4c32;
+}
+
+.linea-larga {
+  border: none;
+  height: 3px;
+  width: 90%;
+  margin: 40px auto;
+  background: linear-gradient(to right, #b89b5e, #e8d4a2, #b89b5e);
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+.linea-dorada {
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(to right, #c6a95f, #e8d4a2, #c6a95f);
+  margin: 40px auto;
+  animation: expand 2s ease-in-out;
+}
+
+@keyframes expand {
+  from { width: 0; opacity: 0; }
+  to { width: 60%; opacity: 1; }
+}
+
+.contador {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.contador div {
+  background: #f8f4ec;
+  border: 2px solid #d6b36a;
+  border-radius: 10px;
+  width: 90px;
+  padding: 10px;
+  font-size: 20px;
+  color: #b89b5e;
+}
+
+.boton {
+  display: inline-block;
+  background-color: #c6a95f;
+  color: white;
+  padding: 12px 25px;
+  margin-top: 15px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.boton:hover {
+  background-color: #b18c47;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 16px;
+  color: #6b5b3b;
+  padding-bottom: 30px;
+}
+
+audio {
+  display: none;
+}
+
+/* Iglesia */
+.lugar-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.imagen-iglesia img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.info-iglesia {
+  max-width: 350px;
+  text-align: left;
+}
+
+.info-iglesia h3 {
+  font-family: 'Great Vibes', cursive;
+  color: #b89b5e;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.info-iglesia p {
+  font-size: 18px;
+  color: #5a4c32;
+  margin-bottom: 15px;
+}
+
+.info-iglesia .boton {
+  display: inline-block;
+}
+
+/* Recepción */
+.recepcion-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.icono-recepcion img {
+  width: 100%;
+  max-width: 120px;
+  filter: drop-shadow(0 0 5px #c6a95f);
+}
+
+.info-recepcion {
+  max-width: 350px;
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+}
+
+.info-recepcion h3 {
+  font-family: 'Great Vibes', cursive;
+  color: #b89b5e;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.info-recepcion p {
+  font-size: 18px;
+  color: #5a4c32;
+  margin-bottom: 10px;
+}
+
+/* Lluvia de sobres */
+.lluvia-sobres {
+  margin: 50px auto;
+  max-width: 700px;
+  text-align: center;
+  color: #5a4c32;
+}
+
+.contenido-sobres {
+  font-size: 18px;
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+  padding: 10px 20px;
+}
+
+.icono-sobre {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 10px;
+  color: #c6a95f;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .titulo { font-size: 50px; }
+  .nombres { flex-direction: column; gap: 10px; }
+  .nombres img { width: 100px; }
+
+  .lugar-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-iglesia {
+    text-align: center;
+  }
+
+  .info-iglesia .boton {
+    margin: 0 auto;
+  }
+
+  .recepcion-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-recepcion {
+    text-align: center;
+  }
+
+  .icono-recepcion img {
+    margin-top: 10px;
+  }
+}
+
+.dresscode {
+  margin: 50px auto;
+  max-width: 700px;
+  text-align: center;
+  color: #5a4c32;
+  font-family: 'Playfair Display', serif;
+}
+
+.dresscode h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 28px;
+  color: #b89b5e;
+  margin-bottom: 15px;
+}
+
+.dresscode p {
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.imagen-dresscode {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  margin: 0 auto;
+  display: block;
+}
+
+
+
+
+
+  </style>
+</head>
+<body>
+<header style="text-align: center; font-family: 'Segoe UI', sans-serif;">
+  <div class="titulo" style="font-size: 2em; font-weight: bold; margin-bottom: 10px;">Nuestra Boda</div>
+  <div class="nombres" style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+    <span style="font-size: 1.5em;">Yesica</span>
+    <img src="https://e7.pngegg.com/pngimages/369/844/png-clipart-engagement-ring-wedding-ring-gold-bride-groom-ring-wedding.png" alt="Argollas de boda" style="width: 80px; height: auto; background: none; border: none; box-shadow: none;">
+    <span style="font-size: 1.5em;">Andrés</span>
+  </div>
+</header>
+
+<div class="linea-dorada"></div>
+
+<p class="texto">
+  ''Hace siete años, éramos solo dos extraños. Nos conocimos en agosto de 2019 y desde entonces la vida nos ha unido con amor y complicidad.
+  Hemos compartido risas, sueños y momentos que nos han hecho más fuertes. En 2021 llegó nuestra mayor bendición, nuestra hija, Emma.
+  Hoy seguimos escribiendo esta historia juntos y celebraremos ¡nuestra boda!'' 💍
+</p>
+
+<p class="texto">
+  Esperamos que puedas acompañarnos mientras continuamos con nuestra historia de amor al decir nuestros “¡Sí, acepto!”.
+</p>
+
+<hr class="linea-larga" />
+
+   
+
+   <div class="lugar-flex">
+  <div class="imagen-iglesia">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTjjumaTXvWSAo-yWIgzEO4s5ceqg3CbIubQ&s" alt="Iglesia">
+  </div>
+  <div class="info-iglesia">
+    <h3>Iglesia San Juan de la Tasajera</h3>
+    <p>Copacabana, Antioquia</p>
+    <p><strong>📅 21 de diciembre de 2025 - 2:00 PM</strong></p>
+    <a href="https://www.google.com/maps/place/San+Juan+de+la+Tasajera/@6.3557528,-75.4982282,17z/data=!3m1!4b1!4m6!3m5!1s0x8e44253b74f915bb:0xe613e5748e30aee!8m2!3d6.3557475!4d-75.4956533!16s%2Fg%2F11byck0f5v?entry=ttu&g_ep=EgoyMDI1MTAyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="boton">📍 Ver en Maps</a>
+  </div>
+</div>
+
+
+<div class="recepcion-flex">
+  <div class="info-recepcion">
+    <h3>Recepción</h3>
+    <p>Copacabana, Antioquia</p>
+    <p>Finca Daytona Summer</p>
+    <p><strong>🕓 4:00 PM</strong></p>
+    <a href="https://maps.app.goo.gl/zxkBD8M3bajF4Ti49?g_st=iw" target="_blank" class="boton">📍 Ver en Maps</a>
+  </div>
+  <div class="icono-recepcion">
+    <img src="https://cdn-icons-png.flaticon.com/512/3176/3176291.png" alt="Recepción" />
+  </div>
+</div>
+
+<div class="dresscode">
+  <hr class="linea-larga" />
+  <h3>Código de Vestimenta</h3>
+  <p>La ocasión será especial, y el estilo también. Te invitamos a vestir con <strong>atuendo tipo cóctel</strong>: elegante, fresco y con mucho estilo.</p>
+  <img src="https://cdn-icons-png.flaticon.com/512/3669/3669567.png" alt="Dress Code" style="width:80px; filter: drop-shadow(0 0 5px #c6a95f); margin-bottom: 10px;" />
+
+</div>
+
+
+  
+</div>
+
+<div class="lluvia-sobres">
+  <hr class="linea-larga" />
+  <div class="contenido-sobres">
+    <span class="icono-sobre">💌</span>
+    <p>
+      Lluvia de sobres
+  </div>
+</div>
+
+
+
+
+    <h3 style="margin-top:40px; color:#b89b5e;">Faltan para el gran día:</h3>
+    <div class="contador" id="contador"></div>
+
+    <div style="margin-top:30px;">
+      <a href="https://wa.me/573104098266?text=Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Yesica%20y%20Andrés" class="boton">✅ Confirmo asistencia</a>
+      <a href="https://wa.me/573104098266?text=No%20podré%20asistir%20a%20la%20boda%20de%20Yesica%20y%20Andrés" class="boton">❌ No podré asistir</a>
+    </div>
+  </section>
+
+  <footer>
+    Con amor, <br> Yesica & Andrés 💛
+  </footer>
+
+
+
+  <script>
+    const contador = document.getElementById("contador");
+    const fechaBoda = new Date("Dec 21, 2025 14:00:00").getTime();
+
+    setInterval(() => {
+      const ahora = new Date().getTime();
+      const distancia = fechaBoda - ahora;
+      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+      contador.innerHTML = `
+        <div>${dias}<br><small>Días</small></div>
+        <div>${horas}<br><small>Horas</small></div>
+        <div>${minutos}<br><small>Minutos</small></div>
+        <div>${segundos}<br><small>Segundos</small></div>
+      `;
+    }, 1000);
+  </script>
+
+</body>
+</html>
